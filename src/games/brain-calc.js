@@ -1,14 +1,14 @@
-import runGame from '../index.js';
+import launchGame from '../index.js';
 
 const generateCalculation = () => {
   const randNumFirst = Math.floor(Math.random() * 10) + 1;
   const randNumSecond = Math.floor(Math.random() * 10) + 1;
   const operators = ['+', '-', '*'];
-  const randOperator = operators[Math.floor(Math.random() * operators.length)];
+  const randomOperator = operators[Math.floor(Math.random() * operators.length)];
 
-  const question = `${randNumFirst} ${randOperator} ${randNumSecond}`;
+  const question = `${randNumFirst} ${randomOperator} ${randNumSecond}`;
   let correctAnswer = '';
-  switch (randOperator) {
+  switch (randomOperator) {
     case '+':
       correctAnswer = String(randNumFirst + randNumSecond);
       break;
@@ -26,7 +26,7 @@ const generateCalculation = () => {
 };
 
 const launchBrainCalc = () => {
-  runGame(generateCalculation, 'What is the result of the expression?');
+  launchGame(generateCalculation, 'What is the result of the expression?');
 };
 
 export default launchBrainCalc;

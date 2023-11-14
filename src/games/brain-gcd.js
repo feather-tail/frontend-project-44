@@ -1,4 +1,4 @@
-import runGame from '../index.js';
+import launchGame from '../index.js';
 
 const generateGCD = () => {
   const randNumFirst = Math.floor(Math.random() * 10) + 1;
@@ -18,7 +18,7 @@ const generateGCD = () => {
 };
 
 const launchBrainGCD = () => {
-  runGame(generateGCD, 'Find the greatest common divisor of given numbers.');
+  launchGame(generateGCD, 'Find the greatest common divisor of given numbers.');
 };
 
 export default launchBrainGCD;

@@ -1,4 +1,4 @@
-import runGame from '../index.js';
+import launchGame from '../index.js';
 
 const generateEven = () => {
   const randNum = Math.floor(Math.random() * 100) + 1;
@@ -9,7 +9,7 @@ const generateEven = () => {
 };
 
 const launchBrainEven = () => {
-  runGame(generateEven, 'Answer "yes" if the number is even, otherwise answer "no".');
+  launchGame(generateEven, 'Answer "yes" if the number is even, otherwise answer "no".');
 };
 
 export default launchBrainEven;

@@ -1,12 +1,12 @@
-import runGame from '../index.js';
+import launchGame from '../index.js';
 
 const generatePrime = () => {
-  const rand = Math.floor(Math.random() * 100);
-  const question = `${rand}`;
+  const randNum = Math.floor(Math.random() * 100);
+  const question = `${randNum}`;
   let correctAnswer = 'yes';
 
-  for (let i = 2; i < rand / 2; i += 1) {
-    if (rand % i === 0) {
+  for (let i = 2; i < randNum / 2; i += 1) {
+    if (randNum % i === 0) {
       correctAnswer = 'no';
       break;
     }
@@ -16,7 +16,7 @@ const generatePrime = () => {
 };
 
 const launchBrainPrime = () => {
-  runGame(generatePrime, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+  launchGame(generatePrime, 'Answer "yes" if given number is prime. Otherwise answer "no".');
 };
 
 export default launchBrainPrime;
