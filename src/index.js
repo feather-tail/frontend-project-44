@@ -5,23 +5,21 @@ const launchGame = (gameLogic, gameDescription) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n${gameDescription}`);
 
-  let wins = 0;
-  while (wins < 3) {
+  for (let i = 0; i < 3; i += 1) {
     const { question, correctAnswer } = gameLogic();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      wins += 1;
-      if (wins === 3) {
+      if (i === 3) {
         console.log(`Congratulations, ${name}!`);
       }
     } else {
       console.log(
         `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`,
       );
-      wins = 0;
+      i = 0;
       break;
     }
   }
