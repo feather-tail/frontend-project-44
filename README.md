@@ -12,15 +12,16 @@ A set of mini-games "Brain-Games" to mental exercise.
 ## Minimum requirements
 
 Node: 17.9.1
+
 npm: 8.11.0
 
 ## Commands
 
-1. brain-calc
-2. brain-even
-3. brain-gcd
-4. brain-prime
-5. brain-progression
+1. ``brain-calc``
+2. ``brain-even``
+3. ``brain-gcd``
+4. ``brain-prime``
+5. ``brain-progression``
 
 ## Demonstration
 
