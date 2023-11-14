@@ -12,7 +12,7 @@ const launchGame = (gameLogic, gameDescription) => {
 
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      if (i === 3) {
+      if (i === 2) {
         console.log(`Congratulations, ${name}!`);
       }
     } else {
