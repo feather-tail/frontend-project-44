@@ -12,17 +12,16 @@ const launchGame = (ganerateGame, gameDescription) => {
 
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      if (i === 2) {
-        console.log(`Congratulations, ${name}!`);
-      }
     } else {
       console.log(
         `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`,
       );
-      i = 0;
-      break;
+      return;
     }
   }
+  console.log(`Congratulations, ${name}!`);
 };
 
-export default launchGame;
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+export { launchGame, getRandomNumber };

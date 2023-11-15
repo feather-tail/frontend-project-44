@@ -1,8 +1,8 @@
-import launchGame from '../index.js';
+import { launchGame, getRandomNumber } from '../index.js';
 
 const generateGCD = () => {
-  const randNumFirst = Math.floor(Math.random() * 10) + 1;
-  const randNumSecond = Math.floor(Math.random() * 10) + 1;
+  const randNumFirst = getRandomNumber(1, 100);
+  const randNumSecond = getRandomNumber(1, 100);
   const question = `${randNumFirst} ${randNumSecond}`;
   let correctAnswer = '';
   if (randNumSecond % randNumFirst === 0) {

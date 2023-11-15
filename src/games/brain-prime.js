@@ -1,7 +1,7 @@
-import launchGame from '../index.js';
+import { launchGame, getRandomNumber } from '../index.js';
 
 const generatePrime = () => {
-  const randNum = Math.floor(Math.random() * 100);
+  const randNum = getRandomNumber(1, 100);
   const question = `${randNum}`;
   let correctAnswer = 'yes';
 

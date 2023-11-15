@@ -1,10 +1,10 @@
-import launchGame from '../index.js';
+import { launchGame, getRandomNumber } from '../index.js';
 
 const generateCalculation = () => {
-  const randNumFirst = Math.floor(Math.random() * 10) + 1;
-  const randNumSecond = Math.floor(Math.random() * 10) + 1;
+  const randNumFirst = getRandomNumber(1, 10);
+  const randNumSecond = getRandomNumber(1, 10);
   const operators = ['+', '-', '*'];
-  const randomOperator = operators[Math.floor(Math.random() * operators.length)];
+  const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
 
   const question = `${randNumFirst} ${randomOperator} ${randNumSecond}`;
   let correctAnswer = '';
@@ -19,7 +19,7 @@ const generateCalculation = () => {
       correctAnswer = String(randNumFirst * randNumSecond);
       break;
     default:
-      console.log('Error');
+      throw new Error(`Unknown operator: '${randomOperator}'!`);
   }
 
   return { question, correctAnswer };

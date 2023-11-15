@@ -1,7 +1,7 @@
-import launchGame from '../index.js';
+import { launchGame, getRandomNumber } from '../index.js';
 
 const generateEven = () => {
-  const randNum = Math.floor(Math.random() * 100) + 1;
+  const randNum = getRandomNumber(1, 10);
   const question = `${randNum}`;
   const correctAnswer = randNum % 2 === 0 ? 'yes' : 'no';
 
