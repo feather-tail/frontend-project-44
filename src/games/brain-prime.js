@@ -1,16 +1,20 @@
 import { launchGame, getRandomNumber } from '../index.js';
 
-const generatePrime = () => {
-  const randNum = getRandomNumber(1, 100);
-  const question = `${randNum}`;
+const getCorrectAnswer = (num) => {
   let correctAnswer = 'yes';
-
-  for (let i = 2; i <= randNum / 2; i += 1) {
-    if (randNum % i === 0) {
+  for (let i = 2; i <= num / 2; i += 1) {
+    if (num % i === 0) {
       correctAnswer = 'no';
       break;
     }
   }
+  return correctAnswer;
+};
+
+const generatePrime = () => {
+  const randNum = getRandomNumber(1, 100);
+  const question = `${randNum}`;
+  const correctAnswer = getCorrectAnswer(question);
 
   return { question, correctAnswer };
 };

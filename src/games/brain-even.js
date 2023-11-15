@@ -4,10 +4,9 @@ const getCorrectAnswer = (num) => num % 2 === 0;
 
 const generateEven = () => {
   const randNum = getRandomNumber(1, 10);
-  const question = `${randNum}`;
   const correctAnswer = getCorrectAnswer(randNum) ? 'yes' : 'no';
 
-  return { question, correctAnswer };
+  return { question: `${randNum}`, correctAnswer };
 };
 
 const launchBrainEven = () => {
