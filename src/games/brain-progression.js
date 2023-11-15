@@ -13,7 +13,7 @@ const getProgression = (randNum) => {
 const generateProgression = () => {
   const randNum = getRandomNumber(1, 10);
   const numbers = getProgression(randNum);
-  const correctAnswerIndex = getRandomNumber(1, 10);
+  const correctAnswerIndex = getRandomNumber(0, 9);
   const correctAnswer = String(numbers[correctAnswerIndex]);
   numbers[correctAnswerIndex] = '..';
   const question = numbers.join(' ');
