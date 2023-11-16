@@ -1,17 +1,15 @@
 import { launchGame, getRandomNumber } from '../index.js';
 
 const getGCD = (numOne, numTwo) => {
-  let correctAnswer = '';
   if (numTwo % numOne === 0) {
-    correctAnswer = numOne;
-    return correctAnswer;
+    return numOne;
   }
-  for (let i = 1; i <= numOne / 2; i += 1) {
+  for (let i = numOne / 2; i >= 1; i -= 1) {
     if (numTwo % i === 0 && numOne % i === 0) {
-      correctAnswer = i;
+      return i;
     }
   }
-  return correctAnswer;
+  return 1;
 };
 
 const generateGCD = () => {
