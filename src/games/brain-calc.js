@@ -1,31 +1,28 @@
 import { launchGame, getRandomNumber } from '../index.js';
 
-const getCorrectAnswer = (operator, numOne, numTwo) => {
-  let correctAnswer = '';
+const getExpressionResult = (operator, numOne, numTwo) => {
   switch (operator) {
     case '+':
-      correctAnswer = String(numOne + numTwo);
-      break;
+      return numOne + numTwo;
     case '-':
-      correctAnswer = String(numOne - numTwo);
-      break;
+      return numOne - numTwo;
     case '*':
-      correctAnswer = String(numOne * numTwo);
-      break;
+      return numOne * numTwo;
     default:
       throw new Error(`Unknown operator: '${operator}'!`);
   }
-  return correctAnswer;
 };
 
 const generateCalculation = () => {
-  const randNumFirst = getRandomNumber(1, 10);
-  const randNumSecond = getRandomNumber(1, 10);
+  const minRandonNum = 1;
+  const maxRandonNum = 10;
+  const randNumFirst = getRandomNumber(minRandonNum, maxRandonNum);
+  const randNumSecond = getRandomNumber(minRandonNum, maxRandonNum);
   const operators = ['+', '-', '*'];
   const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
 
   const question = `${randNumFirst} ${randomOperator} ${randNumSecond}`;
-  const correctAnswer = getCorrectAnswer(randomOperator, randNumFirst, randNumSecond);
+  const correctAnswer = String(getExpressionResult(randomOperator, randNumFirst, randNumSecond));
 
   return { question, correctAnswer };
 };

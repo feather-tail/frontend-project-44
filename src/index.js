@@ -5,7 +5,8 @@ const launchGame = (ganerateGame, gameDescription) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n${gameDescription}`);
 
-  for (let i = 0; i < 3; i += 1) {
+  const win = 3;
+  for (let i = 0; i < win; i += 1) {
     const { question, correctAnswer } = ganerateGame();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');

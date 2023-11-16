@@ -1,10 +1,12 @@
 import { launchGame, getRandomNumber } from '../index.js';
 
-const getCorrectAnswer = (num) => num % 2 === 0;
+const isEven = (num) => num % 2 === 0;
 
 const generateEven = () => {
-  const randNum = getRandomNumber(1, 10);
-  const correctAnswer = getCorrectAnswer(randNum) ? 'yes' : 'no';
+  const minRandonNum = 1;
+  const maxRandonNum = 10;
+  const randNum = getRandomNumber(minRandonNum, maxRandonNum);
+  const correctAnswer = isEven(randNum) ? 'yes' : 'no';
 
   return { question: `${randNum}`, correctAnswer };
 };

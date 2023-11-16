@@ -1,24 +1,26 @@
 import { launchGame, getRandomNumber } from '../index.js';
 
-const getCorrectAnswer = (numOne, numTwo) => {
+const getGCD = (numOne, numTwo) => {
   let correctAnswer = '';
   if (numTwo % numOne === 0) {
-    correctAnswer = String(numOne);
+    correctAnswer = numOne;
     return correctAnswer;
   }
   for (let i = 1; i <= numOne / 2; i += 1) {
     if (numTwo % i === 0 && numOne % i === 0) {
-      correctAnswer = String(i);
+      correctAnswer = i;
     }
   }
   return correctAnswer;
 };
 
 const generateGCD = () => {
-  const randNumFirst = getRandomNumber(1, 100);
-  const randNumSecond = getRandomNumber(1, 100);
+  const minRandonNum = 1;
+  const maxRandonNum = 100;
+  const randNumFirst = getRandomNumber(minRandonNum, maxRandonNum);
+  const randNumSecond = getRandomNumber(minRandonNum, maxRandonNum);
   const question = `${randNumFirst} ${randNumSecond}`;
-  const correctAnswer = getCorrectAnswer(randNumFirst, randNumSecond);
+  const correctAnswer = String(getGCD(randNumFirst, randNumSecond));
   return { question, correctAnswer };
 };
 
